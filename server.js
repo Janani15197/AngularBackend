@@ -3,7 +3,8 @@ const bodyParser=require('body-parser')
 const cors=require('cors')
 
 
-const PORT =3000
+//const PORT =3000
+const PORT = process.env.NODE_ENV === 'production' ? (process.env.PORT || 80) : 4000;
 const api =require('./routes/api')
 const app =express()
 
